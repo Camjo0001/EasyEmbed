@@ -3,8 +3,10 @@ from discord.ext import commands
 import requests
 from dhooks import Webhook
 
-TOKEN = 'NTYwNTgxODAyODU1NDk3ODYz.D32CBA.VPJ8XhJ54j_9kGBDNnmn7_xvCPM'
+#insert your bots token in between the two '
+TOKEN = ''
 
+#changing the command prefix wont do anything since the commands are all run through @Bot.event functions and none are @Bot.command functions this is just there for further addons coming in the future
 Bot = commands.Bot(command_prefix='!')
 
 @Bot.event
@@ -63,23 +65,5 @@ async def on_message(message):
        else:
            await Bot.send_message(message.channel, "This is an invalid response")
            return
-           
-
-
-      
-       
-  
-
-#@Bot.event
-#async def on_message(message):
-    #if message.author == Bot.user:
-      # return
-   # elif message.content.startswith("!ehelp"):
-  #      helptitle = "Below is a list of commands and guides to use the bot"
-  #      helpdescription = None
-  #      helpembed = discord.Embed(title = helptitle, description = helpdescription, color = helpcolor, url = helpurl)
-#
-   #     helpembed.set_footer(text="EasyEmbed, by Camjo#0001", icon_url="https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwi3r8PZiLDhAhWFY98KHRWbDqQQjRx6BAgBEAU&url=https%3A%2F%2Ftenor.com%2Fsearch%2Fhula-gifs&psig=AOvVaw2G5QB1VWxwYFIx6IoNgYDY&ust=1554248419984057")
-  #      await Bot.send_message(message.channel, embed=helpembed)
-
+         
 Bot.run(TOKEN)
